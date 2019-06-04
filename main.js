@@ -1,28 +1,18 @@
-const listaDeAutores = JSON.stringify(autores)
-const listaDeAutoresJs = JSON.parse(listaDeAutores)
-console.log(listaDeAutoresJs)
+const listaDeLivros = JSON.stringify(autores)
+const listaDeLivrosJs = JSON.parse(listaDeLivros)
 
-const createTable = livro =>{
+const insertRows = bunda => {
   let table = ''
-  livro.forEach((item) => {
-    table += `
+  bunda.forEach((livro) => {
+    table+= `
       <tr>
-        <td>${item.livro}</td>
-        <td>${item.autor}</td>
-        <td>${item.genero}</td>
+        <td>${livro.livro}</td>
+        <td>${livro.autor}</td>
+        <td>${livro.genero}</td>
       </tr>
     `
   })
   return table
 }
 
-const orderByAutor = document.getElementById("autor")
-
-orderByAutor.addEventListener("click", (e) => {
-  const listaOrdenada = autores.livros.sort((elementoAnterior, proximoElemento) =>  {
-    return elementoAnterior.autor.toUpperCase() < proximoElemento.autor.toUpperCase() ? -1 : 1
-  })
-  document.getElementById("table-section").innerHTML = createTable(listaOrdenada)
-})
-
-document.getElementById("table-section").innerHTML = createTable(autores.livros)
+insertRows(listaDeLivrosJs.livros)
