@@ -15,4 +15,19 @@ const insertRows = bunda => {
   return table
 }
 
-insertRows(listaDeLivrosJs.livros)
+const ordenarLivro = document.getElementById("ordenar-livro")
+
+ordenarLivro.addEventListener("click", (e) => {
+  const listaOrdenada = listaDeLivrosJs.livros.sort((livroA, livroB) => {
+    if(livroA.livro.toLowerCase() < livroB.livro.toLowerCase()){
+      return -1
+    }
+    if(livroA.livro.toLowerCase() > livroB.livro.toLowerCase()){
+      return 1
+    }
+    return 0
+  })
+  document.getElementById("table-section").innerHTML = insertRows(listaOrdenada)
+})
+
+document.getElementById("table-section").innerHTML = insertRows(listaDeLivrosJs.livros)

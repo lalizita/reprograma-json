@@ -72,7 +72,7 @@ const autores = {
     },
     {
       "autor":"Madeleine L'engle",
-      "livro": " Uma Dobra no Tempo",
+      "livro": "Uma Dobra no Tempo",
       "genero":"mistério"
     },
     {
