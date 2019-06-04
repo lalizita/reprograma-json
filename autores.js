@@ -1,4 +1,4 @@
-{
+const autores = {
   "livros":[
     {
       "autor":"George R. R. Martin",
